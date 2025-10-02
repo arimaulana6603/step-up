@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { PricingCard } from "@/components/pricing-card"
 import { ProductDropdown } from "@/components/product-dropdown"
+import { LogoCarousel } from "@/components/logo-carousel"
 import { CheckIcon, UsersIcon, BriefcaseIcon, GraduationCapIcon } from "lucide-react"
 
 const CLASSES = [
@@ -62,10 +63,27 @@ const FACILITIES = [
 ]
 
 const REGISTRATION_STEPS = [
-  "Peserta mendaftar melalui link formulir",
+  "Peserta mendaftar dengan mengisi formulir melalui klik Daftar Sekarang. Setelah itu, peserta akan dihubungi oleh tim Step Up untuk konfirmasi dan informasi lebih lanjut.",
   "Mendapatkan petunjuk skema pembayaran",
   "Setelah pembayaran, peserta mendapat tanda keikutsertaan bootcamp & masuk ke grup kelas",
   "Peserta menerima kalender akademik & mulai mengikuti program",
+]
+
+const PARTNER_LOGOS = [
+  { src: "/images/partner-lifetech.png", alt: "LifeTech" },
+  { src: "/images/partner-zegen.png", alt: "Zegen Solusi Mandiri" },
+  { src: "/images/partner-hbm.png", alt: "Hexagon Business Mitrasindo" },
+]
+
+const COMPANY_LOGOS = [
+  { src: "/images/kerja-bca.png", alt: "BCA" },
+  { src: "/images/kerja-rintis.png", alt: "PT Rintis Sejahtera" },
+  { src: "/images/kerja-imaginesee.png", alt: "ImagineSee" },
+  { src: "/images/kerja-prima.png", alt: "PRIMA" },
+  { src: "/images/kerja-mandiri.png", alt: "Bank Mandiri" },
+  { src: "/images/kerja-bni.png", alt: "BNI" },
+  { src: "/images/kerja-prototech.png", alt: "PROTOTECH" },
+  { src: "/images/kerja-jalin.png", alt: "Jalin" },
 ]
 
 export default function HomePage() {
@@ -97,7 +115,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex-1 flex justify-center">
-            <Image src="/images/stepup-logo.png" alt="Logo Step Up Bootcamp" width={240} height={76} priority />
+            <Image
+              src="/images/stepup-logo-white-arrow.png"
+              alt="Logo Step Up Bootcamp"
+              width={240}
+              height={240}
+              priority
+            />
           </div>
         </div>
       </section>
@@ -122,17 +146,11 @@ export default function HomePage() {
           <h2 className="text-2xl md:text-3xl font-semibold text-balance">
             Seperti apa kurikulum dan pilihan kelas yang disiapkan?
           </h2>
-          <p className="mt-2 text-muted-foreground">
-            Kami menyediakan 8 pilihan kelas yang dirancang sesuai kebutuhan industri.
-          </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {CLASSES.map((c) => (
               <div key={c.slug} className="rounded-lg border bg-card p-5 flex flex-col">
                 <h3 className="text-lg font-semibold">{c.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2 flex-1">{c.description}</p>
-                <Button asChild variant="outline" className="mt-4 bg-transparent">
-                  <Link href={`/kursus/${c.slug}`}>Lihat Detail</Link>
-                </Button>
               </div>
             ))}
           </div>
@@ -212,12 +230,17 @@ export default function HomePage() {
       </section>
 
       {/* Sertifikat & Peluang Kerja */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-6xl px-4 py-14 text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold text-balance">Sertifikat & Transkrip Kelulusan</h2>
-          <p className="mt-3 text-pretty opacity-90">
+      <section className="bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl md:text-3xl font-semibold text-balance text-center">
+            Sertifikat & Transkrip Kelulusan
+          </h2>
+          <p className="mt-3 text-pretty text-center text-muted-foreground">
             Setelah lulus, peserta mendapatkan sertifikat resmi dan peluang bekerja di perusahaan mitra.
           </p>
+          <div className="mt-8 max-w-md mx-auto">
+            <LogoCarousel logos={COMPANY_LOGOS} />
+          </div>
         </div>
       </section>
 
@@ -310,17 +333,18 @@ export default function HomePage() {
       </section>
 
       {/* Partner logos */}
-      <section className="bg-secondary">
+      <section className="bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-10">
-          <h3 className="text-center text-sm text-muted-foreground">Didukung oleh partner</h3>
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex justify-center">
+          <h3 className="text-center text-lg font-semibold mb-6">Didukung Oleh:</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {PARTNER_LOGOS.map((logo, i) => (
+              <div key={i} className="flex items-center justify-center">
                 <Image
-                  src={`/placeholder.svg?height=48&width=120&query=partner%20logo`}
-                  alt={`Logo partner ${i}`}
-                  width={120}
-                  height={48}
+                  src={logo.src || "/placeholder.svg"}
+                  alt={logo.alt}
+                  width={160}
+                  height={60}
+                  className="object-contain"
                 />
               </div>
             ))}

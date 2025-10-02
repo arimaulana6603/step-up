@@ -140,14 +140,6 @@ export default function CourseDetailPage({ params }: Props) {
       <p className="mt-3 text-muted-foreground leading-relaxed">{data.description}</p>
 
       <section className="mt-8">
-        <h2 className="text-xl font-semibold">Fasilitas</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Kelas online & tatap muka via Zoom, materi lengkap, tugas terstruktur, mentoring expert, sertifikat, job
-          placement.
-        </p>
-      </section>
-
-      <section className="mt-8">
         <h2 className="text-xl font-semibold">Main Topics</h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
           {data.mainTopics.map((topic) => (
