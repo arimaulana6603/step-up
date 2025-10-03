@@ -90,38 +90,35 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-6xl px-4 py-16 flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1">
-            <h1 className="text-balance text-3xl md:text-5xl font-semibold">Step Up Bootcamp 2025</h1>
-            <p className="mt-4 text-pretty text-base md:text-lg font-medium">Upgrade Skill dan Karir Kamu Sekarang</p>
-            <p className="mt-4 text-pretty text-sm md:text-base opacity-90">
-              Mengatasi tantangan mencari kerja, mismatch skill, dan membuka peluang kerja baru melalui program intensif
-              berbasis proyek nyata.
-            </p>
-            <div className="mt-6 flex items-center gap-3">
-              <Button asChild className="bg-accent text-accent-foreground hover:opacity-90">
-                <a href="https://bit.ly/DaftarStepUp" target="_blank" rel="noopener noreferrer">
-                  Daftar Sekarang
-                </a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-              >
-                <Link href="/kursus">Lihat Kelas</Link>
-              </Button>
-            </div>
-          </div>
-          <div className="flex-1 flex justify-center">
-            <Image
-              src="/images/stepup-logo-white-arrow.png"
-              alt="Logo Step Up Bootcamp"
-              width={240}
-              height={240}
-              priority
-            />
+      <section className="relative bg-primary text-primary-foreground overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/background-hero.jpg" alt="Hero background" fill className="object-cover" priority />
+          {/* Blue overlay matching logo color */}
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 flex flex-col items-center text-center gap-6">
+          <h1 className="text-balance text-3xl md:text-5xl font-semibold">Step Up Bootcamp 2025</h1>
+          <p className="text-pretty text-base md:text-lg font-medium">Upgrade Skill dan Karir Kamu Sekarang</p>
+          <p className="text-pretty text-sm md:text-base opacity-90 max-w-2xl">
+            Mengatasi tantangan mencari kerja, mismatch skill, dan membuka peluang kerja baru melalui program intensif
+            berbasis proyek nyata.
+          </p>
+          <div className="mt-2 flex items-center gap-3">
+            <Button asChild className="bg-accent text-accent-foreground hover:opacity-90">
+              <a href="https://bit.ly/DaftarStepUp" target="_blank" rel="noopener noreferrer">
+                Daftar Sekarang
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+            >
+              <Link href="/kursus">Lihat Kelas</Link>
+            </Button>
           </div>
         </div>
       </section>

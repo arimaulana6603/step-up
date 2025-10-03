@@ -15,14 +15,11 @@ export function SiteHeader() {
           <span className="sr-only">Step Up Bootcamp</span>
         </Link>
         <nav className="hidden md:flex items-center gap-4">
-          <Link href="/" className="text-sm font-medium hover:text-primary">
-            Home
-          </Link>
           <Link href="/kursus" className="text-sm font-medium hover:text-primary">
             Kelas
           </Link>
           <Link href="/kontak" className="text-sm font-medium hover:text-primary">
-            Hubungi Kami
+            Kontak Kami
           </Link>
           <Button asChild className="bg-accent text-accent-foreground hover:opacity-90">
             <a href="https://bit.ly/DaftarStepUp" target="_blank" rel="noopener noreferrer">
@@ -40,18 +37,13 @@ export function SiteHeader() {
             <SheetContent side="right" className="p-0">
               <nav className="flex flex-col" role="navigation" aria-label="Mobile">
                 <SheetClose asChild>
-                  <Link href="/" className="px-4 py-3 text-base font-medium hover:text-primary">
-                    Home
-                  </Link>
-                </SheetClose>
-                <SheetClose asChild>
                   <Link href="/kursus" className="px-4 py-3 text-base font-medium hover:text-primary">
                     Kelas
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>
                   <Link href="/kontak" className="px-4 py-3 text-base font-medium hover:text-primary">
-                    Hubungi Kami
+                    Kontak Kami
                   </Link>
                 </SheetClose>
                 <div className="p-4">
