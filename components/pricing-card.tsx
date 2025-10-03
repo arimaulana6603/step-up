@@ -18,16 +18,16 @@ export function PricingCard({ title, originalPrice, discountedPrice, badge, feat
           {badge}
         </span>
       )}
-      <h3 className="text-xl font-semibold">{title}</h3>
+      <h3 className="text-xl font-semibold text-black">{title}</h3>
       <div className="mt-4">
-        <span className="text-sm text-muted-foreground line-through">{originalPrice}</span>
-        <p className="text-3xl font-bold text-primary mt-1">{discountedPrice}</p>
+        <span className="text-sm text-black/60 line-through">{originalPrice}</span>
+        <p className="text-3xl font-bold text-black mt-1">{discountedPrice}</p>
       </div>
       <ul className="mt-6 space-y-3 flex-1">
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2">
             <CheckIcon className="size-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-sm">{f}</span>
+            <span className="text-sm text-black">{f}</span>
           </li>
         ))}
       </ul>

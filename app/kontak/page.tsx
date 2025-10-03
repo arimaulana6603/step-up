@@ -30,8 +30,8 @@ export default function ContactPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="text-3xl font-semibold">Contact Us</h1>
-      <div className="mt-6 grid md:grid-cols-2 gap-10">
+      <h1 className="text-3xl font-semibold">Kontak Kami</h1>
+      <div className="mt-6 grid md:grid-cols-2 gap-10 items-start">
         <div className="space-y-2">
           <p className="text-sm">
             Email:{" "}
@@ -65,7 +65,7 @@ export default function ContactPage() {
             <label htmlFor="email" className="text-sm font-medium">
               Email
             </label>
-            <Input id="email" name="email" type="email" required placeholder="email@contoh.com" />
+            <Input id="email" name="email" type="email" required placeholder="Alamat Email" />
           </div>
           <div className="grid gap-2">
             <label htmlFor="message" className="text-sm font-medium">

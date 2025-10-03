@@ -24,12 +24,12 @@ export function LogoCarousel({ logos }: LogoCarouselProps) {
         style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
       >
         {logos.map((logo, i) => (
-          <div key={i} className="min-w-[33.333%] flex justify-center items-center py-6 px-4">
+          <div key={i} className="min-w-[33.333%] flex justify-center items-center py-8 px-8">
             <Image
               src={logo.src || "/placeholder.svg"}
               alt={logo.alt}
-              width={150}
-              height={60}
+              width={200}
+              height={80}
               className="object-contain"
             />
           </div>

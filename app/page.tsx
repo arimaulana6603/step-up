@@ -193,7 +193,7 @@ export default function HomePage() {
       </section>
 
       {/* Tujuan */}
-      <section className="bg-secondary">
+      <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <h2 className="text-2xl md:text-3xl font-semibold text-balance">Tujuan Program</h2>
           <ul className="mt-6 space-y-3">
@@ -250,12 +250,12 @@ export default function HomePage() {
       </section>
 
       {/* Pricing */}
-      <section className="bg-secondary">
+      <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <h2 className="text-2xl md:text-3xl font-semibold text-balance text-center">
             Upgrade Skill dan Karir Kamu Sekarang
           </h2>
-          <p className="text-center text-muted-foreground mt-2">Pilih paket yang sesuai dengan kebutuhanmu</p>
+          <p className="text-center mt-2">Pilih paket yang sesuai dengan kebutuhanmu</p>
           <div className="mt-10 grid md:grid-cols-3 gap-6">
             <PricingCard
               title="Standar"
@@ -289,7 +289,7 @@ export default function HomePage() {
             />
             <PricingCard
               title="Enterprise Business Partner"
-              originalPrice="Hubungi Kami"
+              originalPrice=""
               discountedPrice="Custom"
               features={[
                 "Mentoring tim perusahaan",
