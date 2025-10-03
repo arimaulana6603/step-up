@@ -39,39 +39,46 @@ const PRODUCTS: Product[] = [
 ]
 
 export function ProductDropdown() {
-  const [open, setOpen] = useState(false)
+  const [openProduct, setOpenProduct] = useState<string | null>(null)
+
+  const toggleProduct = (productName: string) => {
+    setOpenProduct(openProduct === productName ? null : productName)
+  }
 
   return (
-    <div className="rounded-lg border bg-card">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors"
-        aria-expanded={open}
-      >
-        <span className="font-semibold">Product Hasil Siswa</span>
-        <ChevronDownIcon className={`size-5 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && (
-        <div className="border-t p-4 space-y-6">
-          {PRODUCTS.map((p) => (
-            <div key={p.name} className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/3 flex-shrink-0">
-                <Image
-                  src={p.image || "/placeholder.svg"}
-                  alt={p.name}
-                  width={300}
-                  height={200}
-                  className="rounded-lg object-cover w-full"
-                />
-              </div>
-              <div className="flex-1">
-                <h4 className="font-medium text-primary text-lg">{p.name}</h4>
-                <p className="text-sm text-muted-foreground mt-2">{p.description}</p>
+    <div className="space-y-4">
+      {PRODUCTS.map((product) => (
+        <div key={product.name} className="rounded-lg border bg-card overflow-hidden">
+          <button
+            onClick={() => toggleProduct(product.name)}
+            className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors"
+            aria-expanded={openProduct === product.name}
+          >
+            <span className="font-semibold">{product.name}</span>
+            <ChevronDownIcon
+              className={`size-5 transition-transform ${openProduct === product.name ? "rotate-180" : ""}`}
+            />
+          </button>
+          {openProduct === product.name && (
+            <div className="border-t p-4">
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="md:w-1/3 flex-shrink-0">
+                  <Image
+                    src={product.image || "/placeholder.svg"}
+                    alt={product.name}
+                    width={300}
+                    height={200}
+                    className="rounded-lg object-cover w-full"
+                  />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm text-muted-foreground">{product.description}</p>
+                </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
-      )}
+      ))}
     </div>
   )
 }

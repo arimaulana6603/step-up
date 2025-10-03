@@ -21,15 +21,15 @@ export function LogoCarousel({ logos }: LogoCarouselProps) {
     <div className="relative w-full overflow-hidden">
       <div
         className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
       >
         {logos.map((logo, i) => (
-          <div key={i} className="min-w-full flex justify-center items-center py-6">
+          <div key={i} className="min-w-[33.333%] flex justify-center items-center py-6 px-4">
             <Image
               src={logo.src || "/placeholder.svg"}
               alt={logo.alt}
-              width={200}
-              height={80}
+              width={150}
+              height={60}
               className="object-contain"
             />
           </div>

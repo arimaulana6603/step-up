@@ -63,7 +63,7 @@ const FACILITIES = [
 ]
 
 const REGISTRATION_STEPS = [
-  "Peserta mendaftar dengan mengisi formulir melalui klik Daftar Sekarang. Setelah itu, peserta akan dihubungi oleh tim Step Up untuk konfirmasi dan informasi lebih lanjut.",
+  "Peserta mendaftar dengan mengisi formulir melalui klik Daftar Sekarang.",
   "Mendapatkan petunjuk skema pembayaran",
   "Setelah pembayaran, peserta mendapat tanda keikutsertaan bootcamp & masuk ke grup kelas",
   "Peserta menerima kalender akademik & mulai mengikuti program",
