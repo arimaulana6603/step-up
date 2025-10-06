@@ -317,7 +317,7 @@ export default function HomePage() {
 
       {/* Partner logos */}
       <section className="bg-muted/30">
-        <div className="mx-auto max-w-6xl px-4 py-10">
+        <div className="mx-auto max-w-6xl px-4 py-14">
           <h3 className="text-center text-lg font-semibold mb-6">Didukung Oleh:</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {PARTNER_LOGOS.map((logo, i) => (
