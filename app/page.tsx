@@ -123,20 +123,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-accent text-accent-foreground">
-        <div className="mx-auto max-w-6xl px-4 py-8 flex flex-wrap justify-center gap-8 md:gap-16">
-          <div className="text-center">
-            <p className="text-4xl font-bold">20+</p>
-            <p className="text-sm mt-1">Projects</p>
-          </div>
-          <div className="text-center">
-            <p className="text-4xl font-bold">100+</p>
-            <p className="text-sm mt-1">Job Roles</p>
-          </div>
-        </div>
-      </section>
-
       {/* Kurikulum & Pilihan Kelas */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-4 py-14">
