@@ -19,10 +19,7 @@ export function PricingCard({ title, originalPrice, discountedPrice, badge, feat
         </span>
       )}
       <h3 className="text-xl font-semibold text-black">{title}</h3>
-      <div className="mt-4">
-        <span className="text-sm text-black/60 line-through">{originalPrice}</span>
-        <p className="text-3xl font-bold text-black mt-1">{discountedPrice}</p>
-      </div>
+      {/* Sebelumnya di sini ada blok yang menampilkan harga coret dan harga diskon. */}
       <ul className="mt-6 space-y-3 flex-1">
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2">
