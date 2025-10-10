@@ -21,6 +21,9 @@ export function SiteHeader() {
           <Link href="/kontak" className="text-sm font-medium hover:text-primary">
             Kontak Kami
           </Link>
+          <Link href="/blog" className="text-sm font-medium hover:text-primary">
+            Blog
+          </Link>
           <Button asChild className="bg-accent text-accent-foreground hover:opacity-90">
             <a href="https://bit.ly/DaftarStepUp" target="_blank" rel="noopener noreferrer">
               Daftar Sekarang
@@ -44,6 +47,11 @@ export function SiteHeader() {
                 <SheetClose asChild>
                   <Link href="/kontak" className="px-4 py-3 text-base font-medium hover:text-primary">
                     Kontak Kami
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link href="/blog" className="px-4 py-3 text-base font-medium hover:text-primary">
+                    Blog
                   </Link>
                 </SheetClose>
                 <div className="p-4">
