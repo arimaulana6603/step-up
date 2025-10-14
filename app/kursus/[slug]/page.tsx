@@ -123,6 +123,14 @@ const COURSE_CONTENT: Record<string, { name: string; description: string; mainTo
   },
 }
 
+export async function generateStaticParams() {
+  // Ambil semua slug dari COURSE_CONTENT
+  return Object.keys(COURSE_CONTENT).map((slug) => ({
+    slug,
+  }));
+}
+
+
 export default function CourseDetailPage({ params }: Props) {
   const data = COURSE_CONTENT[params.slug]
   if (!data) {
