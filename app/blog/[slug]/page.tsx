@@ -23,15 +23,6 @@ async function getPost(slug: string): Promise<WpPost | null> {
   return arr?.[0] ?? null
 }
 
-export async function generateStaticParams() {
-  const res = await fetch("https://stepup.lifetech.co.id/backend/wp-json/wp/v2/posts")
-  const posts = await res.json()
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
-}
-
 export default async function BlogDetailPage({
   params,
 }: {

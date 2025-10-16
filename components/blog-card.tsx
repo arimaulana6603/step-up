@@ -29,7 +29,7 @@ export function BlogCard({ slug, title, excerpt, date, author, featuredImage }: 
             src={featuredImage || "/placeholder.svg"}
             alt={title}
             fill
-            className="object-cover"
+            className="object-contain p-4"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
