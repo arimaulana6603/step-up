@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -9,6 +10,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
+  assetPrefix: "https://stepup.lifetech.co.id/",
+  experimental: {
+    forceStatic: true,
+  },
+};
 
-export default nextConfig
+export default nextConfig;
